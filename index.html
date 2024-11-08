@@ -4,59 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Práctica 4-5</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            background-color: #f0f0f0;
-        }
-    
-        .container {
-            text-align: center;
-        }
-    
-        .plano {
-            position: relative;
-            width: 300px;
-            height: 10px;
-            background-color: #10f141;
-            transform-origin: left center;
-        }
-    
-        .objeto {
-            position: absolute;
-            width: 30px;
-            height: 30px;
-            background-color: #ff0000;
-            left: 50px;
-            bottom: 10px;
-            transform-origin: center;
-        }
-
-        .flecha {
-            position: absolute;
-            height: 8px;
-            background-color: #0000ff;
-            top: -18px;
-            left: 50px;
-            transform-origin: left center;
-            transition: width 0.3s;
-        }
-
-        .flecha::after {
-            content: '';
-            position: absolute;
-            right: -10px;
-            top: -6px;
-            border-top: 10px solid transparent;
-            border-bottom: 10px solid transparent;
-            border-left: 12px solid #0000ff;
-        }
-    </style>
+    <link rel="stylesheet" href="./css/styles.css">
 </head>
 <body>
     <div class="container">
