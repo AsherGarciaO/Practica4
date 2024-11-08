@@ -1,18 +1,103 @@
 <!DOCTYPE html>
 <html lang="es">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Práctica 4-5</title>
-    </head>
-    <body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Práctica 4-5</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+    
+        .container {
+            text-align: center;
+        }
+    
+        .plano {
+            position: relative;
+            width: 300px;
+            height: 10px;
+            background-color: #10f141;
+            transform-origin: left center;
+        }
+    
+        .objeto {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            background-color: #ff0000;
+            left: 50px;
+            bottom: 10px;
+            transform-origin: center;
+        }
+
+        .flecha {
+            position: absolute;
+            height: 8px;
+            background-color: #0000ff;
+            top: -18px;
+            left: 50px;
+            transform-origin: left center;
+            transition: width 0.3s;
+        }
+
+        .flecha::after {
+            content: '';
+            position: absolute;
+            right: -10px;
+            top: -6px;
+            border-top: 10px solid transparent;
+            border-bottom: 10px solid transparent;
+            border-left: 12px solid #0000ff;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
         <div>
-            Ingrese el coeficiente de fricción:
-            <input type="number" id="cFriccion">
+            Ingrese el Coeficiente de Fricción 1:
+            <input type="number" id="cFriccion1" min="0" value="0">
             <br>
-            
+            Ingrese el Coeficiente de Fricción 2:
+            <input type="number" id="cFriccion2" min="0" value="0">
+            <br>
+            Ingrese el Coeficiente de Fricción 3:
+            <input type="number" id="cFriccion3" min="0" value="0">
+            <br>
+            Ángulo de Inclinación del Plano:
+            <input type="number" id="angulo" min="0" value="0">
+            <br>
+            Ingrese la Fuerza Aplicada al Objeto:
+            <input type="number" id="fuerza" min="1" value="1">
+            <br>
+            Peso del Objeto:
+            <input type="number" id="peso" min="1" value="1">
+            <br>
+            <button type="button" id="calcular">Simular</button>
         </div>
-        <script src="./js/formulas.js"></script>
-        <script src="./js/elementos.js"></script>
-    </body>
+        <br><br>
+        <div>
+            ¿El objeto se mueve?:<br>
+            <p id="rCF1">Coeficiente de Fricción 1:</p>
+            <p id="rCF2">Coeficiente de Fricción 2:</p>
+            <p id="rCF3">Coeficiente de Fricción 3:</p>
+        </div>
+    </div>
+    <div class="plano" id="plano">
+        <div class="objeto" id="objeto"></div>
+        <div class="flecha" id="flecha"></div>
+    </div>
+    <script src="./js/formulas.js"></script>
+    <script src="./js/elementos.js"></script>
+    <script>
+        agregarEventos("cFriccion1", "cFriccion2", "cFriccion3", "fuerza", "peso", "angulo", "calcular");
+        iniciar();
+    </script>
+</body>
 </html>
