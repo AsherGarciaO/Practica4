@@ -9,32 +9,51 @@
 <body>
     <div class="container">
         <div>
-            Ingrese el Coeficiente de Fricción 1:
-            <input type="number" id="cFriccion1" min="0" value="0">
-            <br>
-            Ingrese el Coeficiente de Fricción 2:
-            <input type="number" id="cFriccion2" min="0" value="0">
-            <br>
-            Ingrese el Coeficiente de Fricción 3:
-            <input type="number" id="cFriccion3" min="0" value="0">
-            <br>
+            <div>
+                <p id="msjTipo">Tipo de Coeficiente de Fricción: Estática</p>
+                <p id="msj1">Primer Elemento: Hule</p>
+                <p id="msj2">Segundo Elemento: Hule</p>
+                <p id="msjCF">Coeficiente de Fricción: 1.5</p>
+                <p id="mina">Ángulo Crítico Mínimo: 57°</p>
+            </div>
+            <div>
+                <button class="option" id="est">Estática</button>
+                <button class="option" id="din">Dinámica</button>
+            </div>
+            <br></br>
+            <div id="1">
+                <button class="option">Hule</button>
+                <button class="option">Concreto</button>
+                <button class="option">Acero</button>
+                <button class="option">Vidrio</button>
+                <button class="option">Cobre</button>
+                <button class="option">Madera</button>
+            </div>
+            <br></br>
+            <div id="2">
+                <button class="option">Hule</button>
+                <button class="option">Concreto</button>
+                <button class="option">Acero</button>
+                <button class="option">Vidrio</button>
+                <button class="option">Cobre</button>
+                <button class="option">Madera</button>
+            </div>
+            <br><br><br>
+
             Ángulo de Inclinación del Plano:
             <input type="number" id="angulo" min="0" value="0">
-            <br>
-            Ingrese la Fuerza Aplicada al Objeto:
-            <input type="number" id="fuerza" min="1" value="1">
             <br>
             Peso del Objeto:
             <input type="number" id="peso" min="1" value="1">
             <br>
-            <button type="button" id="calcular">Simular</button>
+            Fuerza Aplicada (Opcional):
+            <input type="number" id="fuerza" min="0" value="0">
+            <br>
         </div>
         <br><br>
         <div>
             ¿El objeto se mueve?:<br>
-            <p id="rCF1">Coeficiente de Fricción 1:</p>
-            <p id="rCF2">Coeficiente de Fricción 2:</p>
-            <p id="rCF3">Coeficiente de Fricción 3:</p>
+            <p id="rCF1"></p>
         </div>
     </div>
     <div class="plano" id="plano">
@@ -44,7 +63,7 @@
     <script src="./js/formulas.js"></script>
     <script src="./js/elementos.js"></script>
     <script>
-        agregarEventos("cFriccion1", "cFriccion2", "cFriccion3", "fuerza", "peso", "angulo", "calcular");
+        agregarEventos("peso", "angulo", "fuerza");
         iniciar();
     </script>
 </body>
