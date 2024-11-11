@@ -28,7 +28,7 @@ function agregarEventos(...ids){
     
     for(let i = 0; i < tags1.length; i++){
         tags1[i].addEventListener('click', ()=>{
-            document.getElementById("msj1").textContent = `Primer Elemento: ${tags1[i].textContent}`;
+            document.getElementById("msj1").textContent = `Material del Plano: ${tags1[i].textContent}`;
             primero = tags1[i].textContent;
             establecerCoeficiente();
             iniciar();
@@ -37,7 +37,7 @@ function agregarEventos(...ids){
 
     for(let i = 0; i < tags2.length; i++){
         tags2[i].addEventListener('click', ()=>{
-            document.getElementById("msj2").textContent = `Segundo Elemento: ${tags2[i].textContent}`;
+            document.getElementById("msj2").textContent = `Material del Objeto: ${tags2[i].textContent}`;
             segundo = tags2[i].textContent;
             establecerCoeficiente();
             iniciar();
