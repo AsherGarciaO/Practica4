@@ -153,4 +153,5 @@ function establecerCoeficiente() {
     }
     
     document.getElementById("msjCF").textContent = "Coeficiente de Fricción: "+cf;
+    document.getElementById("mina").textContent = "Ángulo Crítico Mínimo: "+arctan(cf)+"°";
 }
